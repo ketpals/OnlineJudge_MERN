@@ -5,11 +5,14 @@
     "main": "index.js",
     "proxy": "http://localhost:5000",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "heroku-postbuild": "cd frontend && npm install && npm run build", // Build frontend for deployment
     "dependencies": {
         "@popperjs/core": "^2.11.8",
         "body-parser": "^1.20.3",

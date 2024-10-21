@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const problemRoutes = require('./routes/problemRoutes');  // Import problem routes
 require('dotenv').config();
+const path = require('path');
+
+
 
 const app = express();
 
@@ -24,3 +27,10 @@ app.listen(PORT, () => {
 });
 const cors = require('cors');
 app.use(cors());
+if (process.env.NODE_ENV === 'production') {
+app.use(express.static(path.join(__dirname, 'frontend', 'build'))); // Serve static React files
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html')); // For React router
+});
+}
