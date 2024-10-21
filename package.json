@@ -5,8 +5,9 @@
     "main": "index.js",
     "proxy": "http://localhost:5000",
     "scripts": {
+        "start": "node server.js",
+        "build": "npm run build",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
 
     },
     "keywords": [],
