@@ -1,46 +1,82 @@
-**Online Judge Coding Platform**
+# 🧠 Online Judge Coding Platform (MERN Stack)
 
-A web-based coding platform built using the MERN stack (MongoDB, Express, React, and Node.js). Users can view coding problems, submit solutions in multiple languages (C++ and Python), and get immediate feedback on test cases run inside Docker containers.
+An interactive web-based coding platform that allows users to solve coding problems in **C++** and **Python**, get **immediate verdicts**, and track their progress — all in a full-stack environment built with the **MERN stack (MongoDB, Express, React, Node.js)**.
 
+---
 
-**Features**
+## 🚀 Features
 
-Problem Listing: Browse through coding problems categorized by difficulty (Easy, Medium, Hard).
+- ✅ **Problem Listing**  
+  Browse coding problems categorized by difficulty (**Easy**, **Medium**, **Hard**).
 
-Problem Solving: Users can select a coding problem, write and submit solutions in C++ or Python.
+- ✅ **Code Editor & Language Selection**  
+  Submit solutions in **C++** or **Python** with a live, responsive code editor.
 
-Code Execution: The code is compiled and executed inside Docker containers with predefined test cases.
+- ✅ **Code Execution Engine (no Docker)**  
+  Executes user-submitted code securely using `execSync`, compiles C++, runs Python, and matches outputs with test cases.
 
-Feedback: After submission, users receive real-time feedback with details on whether their solution passed the test cases.
+- ✅ **Test Case Feedback**  
+  Users get detailed feedback — input, expected output, actual output, and pass/fail status.
 
-Solution Tracking: Solved problems are visually marked, and users can see which problems they've already solved.
+- ✅ **Solved Problem Tracking**  
+  Problems are visually marked when solved.
 
-Sort Functionality: Sort problems by difficulty in ascending or descending order.
+- ✅ **Sorting Functionality**  
+  Sort problems by:
+  - Difficulty (Easy → Hard / Hard → Easy)
+  - Solved Status (Solved First / Unsolved First)
 
-User Interface: Clean and responsive UI, enhanced with Bootstrap for modern design.
+- ✅ **Execution Logging**  
+  Submissions are saved to **MongoDB Atlas** with timestamp, code, language, and verdict.
 
+- ✅ **Rate Limiting**  
+  Uses `express-rate-limit` to block excessive API usage.
 
-**Tech Stack**
+- ✅ **Clean & Responsive UI**  
+  Built with **React + Bootstrap** for a modern look.
 
-Frontend: React.js, React Router, Bootstrap
+---
 
-Backend: Node.js, Express.js
+## 🛠️ Tech Stack
 
-Database: MongoDB (with MongoDB Atlas for cloud database)
+| Layer       | Tech                                       |
+|-------------|--------------------------------------------|
+| Frontend    | React.js, React Router, Bootstrap          |
+| Backend     | Node.js, Express.js                        |
+| Database    | MongoDB (MongoDB Atlas for cloud storage)  |
+| Code Runner | Native C++ (GCC), Python via `execSync()`  |
+| Security    | `express-rate-limit`, input sanitization   |
+| Versioning  | Git + GitHub                               |
 
-Code Execution: Docker (GCC for C++, Python Docker images)
+---
 
-Version Control: Git, GitHub
+## 🧩 How It Works
+1. Users select a problem from the list.
+2. They write and submit code in C++/Python.
+3. The backend:
+   - Writes the code to a temp file
+   - Compiles/runs it securely
+   - Feeds it test inputs
+   - Compares actual vs. expected output
+4. Verdict is sent back and shown to the user.
+5. Submission is logged in MongoDB.
 
+---
+## 📸 Screenshots
+<img width="923" alt="ProblemList" src="https://github.com/user-attachments/assets/6be78889-b651-4574-bbea-62ae70339c3a" />
+<img width="931" alt="ProblemDetails_Verdict" src="https://github.com/user-attachments/assets/8a8fff23-3915-47d5-aa40-16d07050876b" />
+---
 
-**How it Works**
+## 🌱 Future Improvements (Planned)
 
-Users select a coding problem from the list.
+- [ ] Docker-based execution sandbox (isolation for security)
+- [ ] Queue-based task execution (for scaling concurrent runs)
+- [ ] User authentication (track user history)
+- [ ] Admin dashboard for submissions
+- [ ] Deployment on Vercel + Render
 
-They write their solution in the provided code editor and choose the language (C++/Python).
+---
 
-Upon submission, the code is sent to the backend, where it is executed inside a Docker container.
+📝 License
+This project is open-source and available under the MIT License.
 
-The backend compares the output of the code with predefined test cases and sends back the results.
-
-The frontend displays the result of each test case, along with whether the solution was successful.
