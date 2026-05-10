@@ -1,14 +1,32 @@
 const mongoose = require('mongoose');
 
 const problemSchema = new mongoose.Schema({
-    title: String,
-    difficulty: String,
-    statement: String,
+    title: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    difficulty: {
+        type: String,
+        required: true,
+        enum: ['Easy', 'Medium', 'Hard']
+    },
+    statement: {
+        type: String,
+        required: true,
+        trim: true
+    },
     examples: [String],
     constraints: [String],
     testCases: [{
-        input: String,
-        expectedOutput: String
+        input: {
+            type: String,
+            required: true
+        },
+        expectedOutput: {
+            type: String,
+            required: true
+        }
     }]
 });
 

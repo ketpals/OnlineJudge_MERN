@@ -3,9 +3,8 @@
 using namespace std;
 
 int main() {
-    string s;
-    cin >> s;  // Reads input from the test case, like "hello"
-    
+string s;
+cin>>s;
     reverse(s.begin(), s.end());  // Reverses the string
     
     cout << s;  // Outputs the reversed string, like "olleh"

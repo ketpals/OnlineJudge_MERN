@@ -2,13 +2,11 @@ const express = require('express');
 const router = express.Router();
 const problemController = require('../controllers/problemController');
 
-// Route to get all problems
 router.get('/problems', problemController.getAllProblems);
-
-// Route to get problem by ID
 router.get('/problems/:id', problemController.getProblemById);
-
-// Route to submit a solution
-router.post('/problems/:id/submit', problemController.submitSolution);
+router.post('/problems/:id/compile', problemController.compileCode);   // ✅ now works
+router.post('/problems/:id/run', problemController.runCode);
+router.post('/problems/:id/submit', problemController.submitSolution);  // ✅ no duplicate
+router.get('/submissions/:id', problemController.getSubmissionsByProblemId);
 
 module.exports = router;
