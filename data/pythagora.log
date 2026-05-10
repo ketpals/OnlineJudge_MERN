@@ -332,3 +332,5 @@ Extra context: {
 2026-05-10T18:12:29.043Z INFO [MainProvider] First file opened, creating split view
 2026-05-10T18:20:29.636Z INFO [TabsManager] First file opened, triggering split view
 2026-05-10T18:20:29.637Z INFO [MainProvider] First file opened, creating split view
+2026-05-10T18:38:55.948Z INFO [TabsManager] First file opened, triggering split view
+2026-05-10T18:38:55.949Z INFO [MainProvider] First file opened, creating split view
