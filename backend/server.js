@@ -41,7 +41,7 @@ app.listen(PORT, () => {
 app.use(cors({
     origin: [
         'https://online-judge-mern-eight.vercel.app',
-        'http://localhost:3000'
+        'http://localhost:5000'
     ],
     credentials: true
 }));
