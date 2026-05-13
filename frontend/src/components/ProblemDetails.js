@@ -129,7 +129,7 @@ const handleRun = async () => {
         setCompileResult(null);
 
         try {
-            const response = await axios.post(`/api/problems/${id}/submit`, {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/problems/${id}/submit`, {
                 code: currentCode,
                 language,
             });
